@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Maio-2018 às 07:24
--- Versão do servidor: 10.1.29-MariaDB
--- PHP Version: 7.2.0
+-- Generation Time: 31-Maio-2018 às 02:17
+-- Versão do servidor: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -33,19 +33,19 @@ USE `bd_gamology`;
 DROP TABLE IF EXISTS `comentario`;
 CREATE TABLE IF NOT EXISTS `comentario` (
   `id_comentario` int(11) NOT NULL AUTO_INCREMENT,
-  `nick_comentario` varchar(20) NOT NULL,
+  `nome_comentario` varchar(20) NOT NULL,
+  `email_comentario` varchar(50) NOT NULL,
   `texto_comentario` varchar(400) NOT NULL,
   PRIMARY KEY (`id_comentario`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `comentario`
 --
 
-INSERT INTO `comentario` (`id_comentario`, `nick_comentario`, `texto_comentario`) VALUES
-(1, 'Mais brabo', 'Este site estÃ¡ brabo que nem eu'),
-(2, 'Mais brabo', 'Este site estÃ¡ brabo que nem eu'),
-(3, 'Mais brabo', 'Este site estÃ¡ brabo que nem eu');
+INSERT INTO `comentario` (`id_comentario`, `nome_comentario`, `email_comentario`, `texto_comentario`) VALUES
+(4, 'Felipe', 'felipe.goncalves.171819@gmail.com', 'Fala ae'),
+(5, 'Felipe', 'felipe.goncalves.171819@gmail.com', 'Fala ae');
 
 -- --------------------------------------------------------
 
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   UNIQUE KEY `cpf_usuario` (`cpf_usuario`),
   UNIQUE KEY `nickname_usuario` (`nickname_usuario`),
   UNIQUE KEY `email_usuario` (`email_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `usuario`
@@ -78,7 +78,11 @@ INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `nickname_usuario`, `cpf_us
 (43, 'trjhthlÃ§h', 'oiuhgorle', '12345678912', 'egehl@kbof.wgf', '456'),
 (45, 'teste', 'teste', '13373760000', 'teste@hotmail.com', 'teste'),
 (48, 'Felipe GonÃ§alves de Marins', 'dfrtjt', '33344455578', 'rherh@wge.erh', 'vaitomarno'),
-(49, 'poie', 'falaae', '45645645678', 'wfwo@inwf.wf', '123456');
+(49, 'poie', 'falaae', '45645645678', 'wfwo@inwf.wf', '123456'),
+(50, 'Matheus Ferro Ribeiro de Oliveira', '6lacksoul', '14725034738', 'matheus.rib12@hotmail.com', '1234'),
+(51, 'wendel sda silva', 'del ', '12323937378', 'wendelsilva63@gmail.com', 'w3nd3l2304'),
+(52, 'Valter Martins', 'Valter_mc', '123456789', 'valter@vmc.pro.br', '123456'),
+(54, 'fabio', 'fabinho', '16687133730', 'fabio19.oliveira@hotmail.com', 'fabio123');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
